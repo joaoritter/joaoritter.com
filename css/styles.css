@@ -1,0 +1,140 @@
+body {
+    font-family: "jaf-domus-titling-web", "ff-enzo-web", sans-serif; 
+    color: black; 
+    margin: 0;
+    padding: 20px;
+}
+
+a {
+    color: black; 
+    text-decoration: none;
+}
+
+.header {
+    font-weight: 600;
+}
+
+.title {
+    float: left;
+    font-size: 16px;
+}
+
+.subtitle {
+    clear: both;
+    float: left;
+    font-weight: 200;
+    margin-top: 10px;
+    font-size: 10px;
+}
+
+.list {
+    clear: both;
+    float: left;
+    width: 60%;
+    max-width: 700px;
+    min-width: 300px;
+    font-weight: 200;
+    font-size: 14px;
+    text-align: left;
+    margin-top: 40px;
+}
+
+.list div {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.photoContainerTitle {
+    font-weight: 200;
+    margin-top: 80px;
+    clear: both;
+    float: left;
+}
+
+#photoContainer {
+    text-align: left; 
+    clear: both;
+    margin-top: 10px;
+    float: left;
+}
+
+.date {
+    display: block; 
+    margin: 0 5px;
+    color: gray; 
+    font-weight: 100;
+    font-size: 14px;
+    opacity: 0;
+    -webkit-transition:opacity 0.7s;
+    -moz-transition:opacity 0.7s;
+    transition:opacity 0.2s;
+}
+
+.imageContainer img {
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.imageContainer .date {
+    margin-bottom: 5px; 
+}
+
+.imageContainer:hover .date {
+    opacity: 1;
+}
+
+.imageContainer:hover img {
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+}
+
+.imageContainer {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    z-index: -1;
+    opacity: 0;
+    margin-right: 12px;
+    margin-left: 0;
+}
+
+/********* viewport divides ***********/
+  
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 500px) {
+    body {
+        padding: 30px;
+    }
+    .title {
+        font-size: 20px;
+    }
+    .subtitle {
+        font-size: 14px;
+    }
+    .photoContainerTitle {
+        float: right;
+    }
+    #photoContainer {
+        text-align: right; 
+    }
+
+    .imageContainer {
+        margin-left: 24px;
+        margin-right: 0;
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    body {
+        padding: 40px;
+    }
+    .title {
+        font-size: 30px;
+    }
+    .subtitle {
+        font-size: 16px;
+    }
+    .list {
+        font-size: 18px;
+    }
+}
+
