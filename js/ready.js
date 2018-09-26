@@ -149,6 +149,7 @@ function delayUntilAllImagesHaveLoaded({ timeout, inSelector } = {}, callback) {
     if (timeout != undefined) {
         setTimeout(function() {
             if (calledBack) return;
+            calledBack = true;
             callback(false); 
         }, timeout);
     }
@@ -158,6 +159,7 @@ function delayUntilAllImagesHaveLoaded({ timeout, inSelector } = {}, callback) {
         timeout
     }, function(finished) {
         if (calledBack) return;   
+        calledBack = true;
         callback(finished);
     });
 }
