@@ -21,7 +21,11 @@ function curateGallery() {
         delayUntilAllImagesHaveLoaded({  
             timeout: 5000,
             inSelector: photoGallerySelector
-        }, function() {
+        }, function(completed) {
+            ///show title.
+            if (completed && pageNumber == 2) {
+                $("#photoContainerTitle").css("opacity", 1);     
+            }
             gallery.curate();
         });
     });

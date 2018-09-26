@@ -52,14 +52,18 @@ a {
     margin: 10px 0;
 }
 
-.photoContainerTitle {
+#photoContainerTitle {
     font-weight: 300;
     margin-top: 80px;
     clear: both;
     float: left;
+    opacity: 0;
+    -webkit-transition:opacity 0.7s;
+    -moz-transition:opacity 0.7s;
+    transition:opacity 0.2s;
 }
 
-.photoContainerTitle:hover {
+#photoContainerTitle:hover {
     text-decoration: underline;
 }
 
@@ -121,7 +125,7 @@ a {
     .subtitle {
         font-size: 14px;
     }
-    .photoContainerTitle {
+    #photoContainerTitle {
         float: right;
     }
     #photoContainer {
