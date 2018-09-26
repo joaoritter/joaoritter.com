@@ -7,3 +7,6 @@ var config = {
     }
  }
 ```
+
+For just the curated photo feed, check out https://github.com/joaoritter/curator/blob/master/index.js.
+
