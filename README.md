@@ -10,5 +10,5 @@ var config = {
 
 If you add a description to the photo on Flickr, the gallery element will link to it.
 
-For just the curated photo feed, check out https://github.com/joaoritter/curator/blob/master/index.js.
+For just the curated photo feed, check out https://github.com/joaoritter/curator.
 
