@@ -23,8 +23,8 @@ function curateGallery() {
             inSelector: photoGallerySelector
         }, function(completed) {
             ///show title.
-            if (completed && pageNumber == 2) {
-                $("#photoContainerTitle").css("opacity", 1);     
+            if (!completed && pageNumber == 2) {
+                $("#photoContainerTitle").css("opacity", 0);     
             }
             gallery.curate();
         });
