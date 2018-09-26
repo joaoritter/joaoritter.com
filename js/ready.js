@@ -17,11 +17,13 @@ function curateGallery() {
         let gallery = $(photoGallerySelector);
         let imgsHtml = photos.join("");
         gallery.append(imgsHtml);
-
-        ///delay so first image has time to resolve height;
-        setTimeout(function() {
+    
+        delayUntilAllImagesHaveLoaded({  
+            timeout: 5000,
+            inSelector: photoGallerySelector
+        }, function() {
             gallery.curate();
-        }, 500);
+        });
     });
 }
 
@@ -134,3 +136,62 @@ function generateSize({ dimensionRatio }) {
 
     return size;
 }
+
+///from https://stackoverflow.com/questions/1977871/check-if-an-image-is-loaded-no-errors-in-javascript
+function delayUntilAllImagesHaveLoaded({ timeout, inSelector } = {}, callback) {
+
+    let calledBack = false;
+
+    if (timeout != undefined) {
+        setTimeout(function() {
+            if (calledBack) return;
+            callback(false); 
+        }, timeout);
+    }
+    
+    checkContinuouslyForImageLoad({
+        inSelector,
+        timeout
+    }, function(finished) {
+        if (calledBack) return;   
+        callback(finished);
+    });
+}
+
+function checkContinuouslyForImageLoad({ timeout=10000, inSelector, i=0 }, callback) {
+    const DELAY = 500;
+    
+    ///make sure it doesnt run forever..
+    if (timeout < DELAY * i) {
+        return callback(false);
+    }
+
+    i++;
+
+    let $images = $(inSelector + " img");
+    for(i = 0; i < $images.length; i++) {
+        let img = $images[i];
+        // During the onload event, IE correctly identifies any images that
+        // weren’t downloaded as not complete. Others should too. Gecko-based
+        // browsers act like NS4 in that they report this incorrectly.
+        if (!img.complete) {
+            setTimeout(function() {
+                checkContinuouslyForImageLoad({ timeout, inSelector, i }, callback);
+            }, DELAY);
+            return;
+        }
+
+        // However, they do have two very useful properties: naturalWidth and
+        // naturalHeight. These give the true size of the image. If it failed
+        // to load, either of these should be zero.
+        if (img.naturalWidth === 0) {
+            setTimeout(function({ timeout, inSelector, i }, callback) {
+                checkContinuouslyForImageLoad();
+            }, DELAY);
+            return;
+        }
+    };
+    callback(true);
+}
+
+
