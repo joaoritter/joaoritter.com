@@ -117,7 +117,7 @@ function generateSize({ dimensionRatio }) {
         else { size = 640 } //10% 640px
     } else if (windowWidth > 650) {
         size = 640 //100% 640px
-    } else if (window_width > 510) {
+    } else if (windowWidth > 510) {
         size = 500 //100% 500px
     } else {
         size = 320 //100% 320px
