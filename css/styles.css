@@ -76,28 +76,20 @@ a {
     float: left;
 }
 
-.date {
-    display: block; 
-    margin: 0 5px;
-    color: gray; 
-    font-weight: 100;
-    font-size: 14px;
-    opacity: 0;
-    -webkit-transition:opacity 0.7s;
-    -moz-transition:opacity 0.7s;
-    transition:opacity 0.2s;
-}
-
 .imageContainer img {
     transition: box-shadow 0.2s ease-in-out;
 }
 
 .imageContainer .date {
     margin-bottom: 5px; 
-}
-
-.imageContainer:hover .date {
-    opacity: 1;
+    display: block; 
+    margin: 0 5px;
+    color: gray; 
+    font-weight: 100;
+    font-size: 14px;
+    -webkit-transition:opacity 0.7s;
+    -moz-transition:opacity 0.7s;
+    transition:opacity 0.2s;
 }
 
 .imageContainer:hover img {
@@ -133,6 +125,15 @@ a {
     #photoContainer {
         text-align: right; 
     }
+
+    .imageContainer .date {
+        opacity: 0;
+    }
+
+    .imageContainer:hover .date {
+        opacity: 1;
+    }
+
 
     .imageContainer {
         margin-left: 24px;
