@@ -103,12 +103,12 @@ function generateSize({ dimensionRatio }) {
         else if (random < .9) { size = 800 } //10% 800px
         else { size = 1024 } //10% 1024px
     } else if (windowWidth > 1100) {
-        if (random < .1) { size = 400 } //10% 400px
-        else if (random < .2) { size = 440 } //20% 440px
-        else if (random < .5) { size = 480 } //20% 480px
-        else if (random < .7) { size = 500 } //20% 500px
-        else if (random < .8) { size = 640 } //10% 640px
-        else { size = 800 } //20% 800px
+        if (random < .1) { size = 300 } //10% 300px
+        else if (random < .2) { size = 340 } //20% 340px
+        else if (random < .5) { size = 400 } //20% 400px
+        else if (random < .7) { size = 440 } //20% 440px
+        else if (random < .8) { size = 500 } //10% 500px
+        else { size = 640 } //20% 640px
     } else if (windowWidth > 810) {
         if (random < .3) { size = 320 } //30% 320px
         else if (random < .4) { size = 400 } //10% 400px
