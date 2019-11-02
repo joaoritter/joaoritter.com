@@ -1,3 +1,4 @@
+
 //Global options
 let pageNumber = 1;
 let pageSize = 20;
@@ -65,7 +66,7 @@ function getPhotos(callback) {
             let date = '<span class="date">' + moment.unix(photoObj.dateupload).fromNow() + '</span>';
 
             let size = generateSize({height: photoObj.height_c, width: photoObj.width_c});
-            let image = '<img src="' + buildPhotoURL(photoObj) + '" alt="" width="' + size + 'px"/>'; 
+            let image = `<div style="width:${size}px;"><img src="${buildPhotoURL(photoObj)}" width=${size}/></div>`; 
 
             let contents = date;
             if (photoObj.description != undefined && photoObj.description._content != undefined && photoObj.description._content != "") {
@@ -120,7 +121,7 @@ function generateSize({ dimensionRatio }) {
     } else if (windowWidth > 510) {
         size = 500 //100% 500px
     } else {
-        size = 320 //100% 320px
+        size = windowWidth //100% 320px
     }
 
     if (dimensionRatio == undefined) {
