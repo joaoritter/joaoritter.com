@@ -170,6 +170,9 @@ a {
     .imageContainer div {
         margin-bottom: 0;
     }
+    .imageContainer img {
+      border-radius: 6px;
+    }
 }
 
 /* Small devices (tablets, 768px and up) */

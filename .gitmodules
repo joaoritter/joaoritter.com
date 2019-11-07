@@ -1,3 +1,6 @@
 [submodule "js/curator"]
 	path = js/curator
 	url = https://github.com/joaoritter/curator
+[submodule "js"]
+	path = js
+	url = git@github.com:joaoritter/curator.git
