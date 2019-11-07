@@ -89,11 +89,23 @@ a {
     text-decoration: underline;
 }
 
+#radio {
+    clear: both;
+    margin-top: 40px;
+    float: right;
+    width: 100%;
+}
+
+#radio iframe {
+    height: 70px;
+    width: 100%;
+}
+
 #photoContainer {
     text-align: left; 
     clear: both;
-    margin-top: 40px;
     float: left;
+    margin-top: 6px;
 }
 
 .imageContainer img {
@@ -149,6 +161,12 @@ a {
     #photoContainerTitle {
         float: right;
     }
+    #radio {
+        width: 300px;
+    }
+    #radio iframe {
+        border-radius: 6px;
+    }
     #photoContainer {
         text-align: right; 
     }
@@ -161,7 +179,6 @@ a {
     .imageContainer:hover .date {
         opacity: 1;
     }
-
 
     .imageContainer {
         margin-left: 24px; 
